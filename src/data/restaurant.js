@@ -1,0 +1,36 @@
+export const restaurant = {
+  name: 'Kiin Kiin Bao Bao',
+  established: 2018,
+  tagline: 'Modern Asian tapas in Copenhagen',
+  address: { street: 'Vesterbrogade 96', city: 'København V', postcode: '1620' },
+  hours: 'Monday–Sunday, 17.00–21.00',
+  holidayNote: 'Open on Christmas Eve and New Year’s Eve',
+  phone: '+45 2154 5051',
+  phoneHref: 'tel:+4521545051',
+  email: 'eat@kiinbao.dk',
+  cateringEmail: 'kiinbao@gmail.com',
+  jobsEmail: 'lertchai@kiin.dk',
+  receiptNote:
+    'Receipts requested after your visit cost 250 kr to reissue, so please keep yours before you leave.',
+  mapEmbed: 'https://www.google.com/maps?q=Vesterbrogade+96+Copenhagen&output=embed',
+  links: {
+    reservation: 'https://book.easytable.com/book/?id=2a075',
+    takeaway: 'https://eat.kiinbao.dk/',
+    giftCard: 'https://kiinkiingifts.dk/kiin/',
+    controlReport: 'https://www.findsmiley.dk/Sider/Search.aspx?k=kiin%20kiin%20bao%20bao',
+  },
+  socials: [
+    { name: 'Facebook', href: 'https://www.facebook.com/kiinkiinbaobao', icon: 'facebook' },
+    { name: 'Instagram', href: 'https://www.instagram.com/kiinkiinbaobao/', icon: 'instagram' },
+  ],
+  sisterRestaurants: [
+    { name: 'Aroii', href: 'https://aroii.dk/' },
+    { name: 'Aroiidee', href: 'https://www.aroiidee.dk/' },
+    { name: 'Kiin Kiin', href: 'https://www.kiin.dk/' },
+    { name: 'Kiin Kiin To Go', href: 'https://kiinkiintogo.dk/' },
+    { name: 'Kiin Kiin Street Aarhus', href: 'https://www.kiinkiinaar.dk/' },
+    { name: 'Sra Bua by Kiin Kiin', href: 'https://www.kempinski.com/en/siam-hotel/restaurants-bars/sra-bua-by-kiin-kiin' },
+    { name: 'Kini Kini', href: 'https://www.kinikini.dk/' },
+    { name: 'VeVe', href: 'https://www.veve.dk/' },
+  ],
+};

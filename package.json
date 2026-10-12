@@ -1,0 +1,10 @@
+{
+  "name": "kiinbao-mvc",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Kiin Kiin Bao Bao restaurant website, rebuilt as a vanilla JavaScript MVC single-page app. No build step: native ES modules.",
+  "type": "module",
+  "scripts": {
+    "start": "npx --yes serve -l 5173 ."
+  }
+}
