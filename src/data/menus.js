@@ -42,10 +42,9 @@ export const alaCarte = {
       {
         heading: 'Desserts',
         items: [
-          { no: 41, name: 'Guava ice cream', detail: 'homemade, with caramelised pineapple and whipped cream' },
-          { no: 42, name: 'Sweet bao', detail: 'filled with peanut cream, served with vanilla ice cream' },
-          { no: 43, name: 'Salted egg buns', detail: 'with icing sugar and cinnamon dust' },
-          { no: 44, name: 'Guava chili sorbet', detail: 'with pineapple and vegan cream' },
+          { no: 41, name: 'Sweet bao', detail: 'filled with peanut cream, served with vanilla ice cream' },
+          { no: 42, name: 'Salted egg buns', detail: 'with icing sugar and cinnamon dust' },
+          { no: 43, name: 'Guava chili sorbet', detail: 'with pineapple and vegan cream' },
         ],
       },
       {
@@ -106,10 +105,9 @@ export const alaCarte = {
       {
         heading: 'Dessert',
         items: [
-          { no: 41, name: 'Guava-is', detail: 'hjemmelavet, med karamelliseret ananas og flødeskum' },
-          { no: 42, name: 'Sød bao', detail: 'fyldt med peanutcreme, serveret med vaniljeis' },
-          { no: 43, name: 'Salted egg-boller', detail: 'med flormelis og kanel' },
-          { no: 44, name: 'Guava-chili-sorbet', detail: 'med ananas og vegansk creme' },
+          { no: 41, name: 'Sød bao', detail: 'fyldt med peanutcreme, serveret med vaniljeis' },
+          { no: 42, name: 'Salted egg-boller', detail: 'med flormelis og kanel' },
+          { no: 43, name: 'Guava-chili-sorbet', detail: 'med ananas og vegansk creme' },
         ],
       },
       {
