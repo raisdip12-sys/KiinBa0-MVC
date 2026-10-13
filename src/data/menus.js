@@ -28,8 +28,7 @@ export const alaCarte = {
           { no: 24, name: 'Portobello panko bao', dish: 'portobello-bao' },
           { no: 25, name: 'Crispy soft shell crab bao', detail: 'spicy teriyaki mayo, fried dill and togarashi' },
           { no: 26, name: 'Japanese prawn tempura bao', detail: 'wasabi mayo and watercress', tags: 'S' },
-          { no: 27, name: 'Black pepper chicken bao', detail: 'pickled cucumber, onion and coriander', tags: 'S' },
-          { no: 28, name: 'Chicken mozzarella bao', detail: 'tomato passata, truffle mayo and mozzarella cheese' },
+          { no: 27, name: 'Chicken mozzarella bao', detail: 'tomato passata, truffle mayo and mozzarella cheese' },
         ],
       },
       {
@@ -93,8 +92,7 @@ export const alaCarte = {
           { no: 24, name: 'Portobellosvampe bao', dish: 'portobello-bao' },
           { no: 25, name: 'Crispy softshell krabbe bao', detail: 'spicy teriyakimayo, stegt dild og togarashi' },
           { no: 26, name: 'Tempurarejer bao', detail: 'wasabimayo og brøndkarse', tags: 'S' },
-          { no: 27, name: 'Sort peber-kyllingebao', detail: 'syltede agurker, løg og koriander', tags: 'S' },
-          { no: 28, name: 'Kylling-mozzarella bao', detail: 'tomatpassata, trøffelmayo og mozzarella' },
+          { no: 27, name: 'Kylling-mozzarella bao', detail: 'tomatpassata, trøffelmayo og mozzarella' },
         ],
       },
       {
@@ -141,7 +139,7 @@ const baoChoices = [
   'Portobello panko',
   'Soft shell crab',
   'Prawn tempura',
-  'Black pepper chicken',
+  'Chicken mozzarella',
 ];
 
 // Set menus are served in order, so their courses are a real sequence.
