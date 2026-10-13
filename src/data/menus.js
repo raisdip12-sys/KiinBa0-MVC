@@ -42,7 +42,7 @@ export const alaCarte = {
       {
         heading: 'Desserts',
         items: [
-          { no: 41, name: 'Mungbean and coconut ice cream', detail: 'homemade, with dried coconut, caramel sauce and oreo crumbs' },
+          { no: 41, name: 'Guava ice cream', detail: 'homemade, with caramelised pineapple and whipped cream' },
           { no: 42, name: 'Sweet bao', detail: 'filled with peanut cream, served with vanilla ice cream' },
         ],
       },
@@ -104,7 +104,7 @@ export const alaCarte = {
       {
         heading: 'Dessert',
         items: [
-          { no: 41, name: 'Mungbønne-is', detail: 'hjemmelavet, med tørret kokos, karamelsauce og oreokrummer' },
+          { no: 41, name: 'Guava-is', detail: 'hjemmelavet, med karamelliseret ananas og flødeskum' },
           { no: 42, name: 'Sød bao', detail: 'fyldt med peanutcreme, serveret med vaniljeis' },
         ],
       },
@@ -151,7 +151,7 @@ export const setMenus = {
       { heading: 'Third serving', options: ['Kiin Kiin red curry with jasmine rice'] },
       {
         heading: 'Sweet ending',
-        options: ['Homemade mungbean and coconut ice cream on dried coconut, with caramel sauce and oreo crumbs'],
+        options: ['Homemade guava ice cream with caramelised pineapple, topped with whipped cream'],
         extra: '+60 kr',
       },
     ],
@@ -191,7 +191,7 @@ export const setMenus = {
       },
       {
         heading: 'Dessert',
-        options: ['Homemade mungbean and coconut ice cream on dried coconut, with caramel sauce and oreo crumbs'],
+        options: ['Homemade guava ice cream with caramelised pineapple, topped with whipped cream'],
       },
     ],
     note: {
