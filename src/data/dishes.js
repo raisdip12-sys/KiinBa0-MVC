@@ -60,13 +60,4 @@ export const dishes = [
     featured: true,
     inSteamer: true,
   },
-  {
-    id: 'galbi-ribs',
-    name: 'Korean galbi short ribs',
-    image: 'galbi-ribs',
-    description:
-      'Korean-style short ribs, slow-cooked and grilled with a homemade savoury sauce, served with rice and homemade kimchi.',
-    featured: true,
-    inSteamer: true,
-  },
 ];

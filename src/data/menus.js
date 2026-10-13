@@ -34,7 +34,7 @@ export const alaCarte = {
       {
         heading: 'Mains',
         items: [
-          { no: 31, name: 'Korean galbi short ribs', dish: 'galbi-ribs' },
+          { no: 31, name: 'Grilled salmon', detail: 'yellow curry sauce, cherry tomatoes, broccolini and crispy onions' },
           { no: 32, name: 'Stir-fry udon' },
           { no: 33, name: 'Kiin Kiin red curry', dish: 'red-curry' },
         ],
@@ -96,7 +96,7 @@ export const alaCarte = {
       {
         heading: 'Hovedretter',
         items: [
-          { no: 31, name: 'Koreanske galbi short ribs', dish: 'galbi-ribs' },
+          { no: 31, name: 'Grillet laks', detail: 'gul karrysauce, cherrytomater, broccolini og sprøde løg' },
           { no: 32, name: 'Stir-fry udonnudler' },
           { no: 33, name: 'Kiin Kiin rød karry', dish: 'red-curry' },
         ],
@@ -184,7 +184,7 @@ export const setMenus = {
         heading: 'Third serving',
         choose: 'one',
         options: [
-          'Korean galbi beef ribs with jasmine rice and kimchi',
+          'Grilled salmon with yellow curry sauce, cherry tomatoes, broccolini and crispy onions',
           'Vegetarian red curry (for vegetarians only)',
           'Stir-fry udon with teriyaki sauce, black pepper and vegetables (for vegans only)',
         ],

@@ -47,7 +47,7 @@ export const about = {
     {
       title: 'Our food',
       image: 'space-6',
-      text: 'Asian street food and tapas: steamed baos, gyoza, salads, Thai red curry and Korean short ribs. Our baos are made fresh every day.',
+      text: 'Asian street food and tapas: steamed baos, gyoza, salads, Thai red curry and grilled salmon. Our baos are made fresh every day.',
     },
     {
       title: 'Our bar',
