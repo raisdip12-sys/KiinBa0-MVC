@@ -29,12 +29,13 @@ export const alaCarte = {
           { no: 25, name: 'Crispy soft shell crab bao', detail: 'spicy teriyaki mayo, fried dill and togarashi' },
           { no: 26, name: 'Japanese prawn tempura bao', detail: 'wasabi mayo and watercress', tags: 'S' },
           { no: 27, name: 'Black pepper chicken bao', detail: 'pickled cucumber, onion and coriander', tags: 'S' },
+          { no: 28, name: 'Chicken mozzarella bao', detail: 'tomato passata, truffle mayo and mozzarella cheese' },
         ],
       },
       {
         heading: 'Mains',
         items: [
-          { no: 31, name: 'Grilled salmon', detail: 'yellow curry sauce, cherry tomatoes, broccolini and crispy onions' },
+          { no: 31, name: 'Grilled salmon', detail: 'curry gravy, grilled broccolini and cherry tomato, tzatziki and jasmine rice' },
           { no: 32, name: 'Stir-fry udon' },
           { no: 33, name: 'Kiin Kiin red curry', dish: 'red-curry' },
         ],
@@ -91,12 +92,13 @@ export const alaCarte = {
           { no: 25, name: 'Crispy softshell krabbe bao', detail: 'spicy teriyakimayo, stegt dild og togarashi' },
           { no: 26, name: 'Tempurarejer bao', detail: 'wasabimayo og brøndkarse', tags: 'S' },
           { no: 27, name: 'Sort peber-kyllingebao', detail: 'syltede agurker, løg og koriander', tags: 'S' },
+          { no: 28, name: 'Kylling-mozzarella bao', detail: 'tomatpassata, trøffelmayo og mozzarella' },
         ],
       },
       {
         heading: 'Hovedretter',
         items: [
-          { no: 31, name: 'Grillet laks', detail: 'gul karrysauce, cherrytomater, broccolini og sprøde løg' },
+          { no: 31, name: 'Grillet laks', detail: 'karrysauce, grillet broccolini og cherrytomat, tzatziki og jasminris' },
           { no: 32, name: 'Stir-fry udonnudler' },
           { no: 33, name: 'Kiin Kiin rød karry', dish: 'red-curry' },
         ],
@@ -184,7 +186,7 @@ export const setMenus = {
         heading: 'Third serving',
         choose: 'one',
         options: [
-          'Grilled salmon with yellow curry sauce, cherry tomatoes, broccolini and crispy onions',
+          'Grilled salmon with curry gravy, grilled broccolini and cherry tomato, tzatziki and jasmine rice',
           'Vegetarian red curry (for vegetarians only)',
           'Stir-fry udon with teriyaki sauce, black pepper and vegetables (for vegans only)',
         ],
