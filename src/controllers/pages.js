@@ -1,7 +1,7 @@
 import { Controller } from '../core/Controller.js';
 import { HomeView } from '../views/HomeView.js';
 import { AlaCarteView, SetMenuView, ListMenuView } from '../views/MenuViews.js';
-import { EventsView, AboutView, FaqView, JobsView, PrivacyView, NotFoundView } from '../views/PageViews.js';
+import { EventsView, AboutView, FaqView, JobsView, LegalView, NotFoundView } from '../views/PageViews.js';
 
 const reducedMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -108,7 +108,7 @@ export class KidsController extends Controller {
   }
 
   mount() {
-    new ListMenuView(this.root).render({ menu: this.models.menus.kids, path: '/kids', lead: 'Prices in kr.' });
+    new ListMenuView(this.root).render({ menu: this.models.menus.kids, path: '/kids' });
   }
 }
 
@@ -182,7 +182,26 @@ export class PrivacyController extends Controller {
   }
 
   mount() {
-    new PrivacyView(this.root).render({ privacy: this.models.content.get('privacy'), info: this.models.restaurant.info });
+    new LegalView(this.root).render({
+      title: 'Privacy policy',
+      page: this.models.content.get('privacy'),
+      info: this.models.restaurant.info,
+    });
+  }
+}
+
+export class TermsController extends Controller {
+  get title() {
+    return 'Terms and conditions · Kiin Kiin Bao Bao';
+  }
+
+  mount() {
+    new LegalView(this.root).render({
+      title: 'Terms and conditions',
+      page: this.models.content.get('terms'),
+      info: this.models.restaurant.info,
+      footer: `<section><h2>Privacy</h2><p>See our <a href="#/privacy">privacy policy</a>.</p></section>`,
+    });
   }
 }
 

@@ -6,8 +6,6 @@ export const img = (name, alt, { cls = '', eager = false, ext = 'webp', w, h } =
     w ? ` width="${w}"` : ''
   }${h ? ` height="${h}"` : ''} ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
 
-export const kr = (price) => (price == null ? '' : `${price} kr`);
-
 const paths = {
   facebook:
     '<path d="M14 8.5V6.8c0-.8.5-1 .9-1H17V2.3L14.1 2.3C10.9 2.3 10.2 4.7 10.2 6.3v2.2H8v3.6h2.2V22H14v-9.9h2.8l.4-3.6H14z"/>',
@@ -35,7 +33,7 @@ export const pageHead = ({ title, lead = '', aside = '' }) => `
     ${aside}
   </header>`;
 
-/** A printed-menu line: name …… price, with detail underneath. */
+/** A printed-menu line: number, name and allergen codes, with detail underneath. Drinks also show a price. */
 export const menuLine = (item) => `
   <li class="menu-line${item.dish ? ' has-photo' : ''}">
     <div class="menu-line-row">

@@ -53,7 +53,6 @@ export class HomeView extends View {
               <button type="button" class="plate-btn" data-dish="${esc(d.id)}" aria-haspopup="dialog">
                 <span class="plate-photo">${img(d.image, '', { w: 400, h: 400 })}</span>
                 <span class="plate-name">${esc(d.name)}</span>
-                <span class="plate-price">${d.price} kr</span>
               </button>
             </li>`
           )}

@@ -127,14 +127,15 @@ export class JobsView extends View {
   }
 }
 
-export class PrivacyView extends View {
-  template({ privacy, info }) {
+/** Privacy policy and terms share one layout. */
+export class LegalView extends View {
+  template({ title, page, info, footer = '' }) {
     return `
       <div class="prose-page">
-        ${pageHead({ title: 'Privacy policy', lead: `Last updated ${esc(privacy.updated)}` })}
+        ${pageHead({ title, lead: `Last updated ${esc(page.updated)}` })}
         <div class="prose">
           ${each(
-            privacy.sections,
+            page.sections,
             (s) => `
             <section>
               <h2>${esc(s.heading)}</h2>
@@ -143,9 +144,10 @@ export class PrivacyView extends View {
               ${s.after ? `<p>${esc(s.after)}</p>` : ''}
             </section>`
           )}
+          ${footer}
           <section>
             <h2>Contact</h2>
-            <p>Questions about this policy or your data? Write to <a href="mailto:${info.email}">${esc(info.email)}</a>, call <a href="${info.phoneHref}">${esc(info.phone)}</a>, or visit us at ${esc(info.address.street)}, ${esc(info.address.postcode)} ${esc(info.address.city)}.</p>
+            <p>Questions about this page or your data? Write to <a href="mailto:${info.email}">${esc(info.email)}</a>, call <a href="${info.phoneHref}">${esc(info.phone)}</a>, or visit us at ${esc(info.address.street)}, ${esc(info.address.postcode)} ${esc(info.address.city)}.</p>
           </section>
         </div>
       </div>`;

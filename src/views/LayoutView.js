@@ -20,6 +20,7 @@ export const NAV = {
     { path: '/events', label: 'Catering and events' },
     { path: '/jobs', label: 'Jobs' },
     { path: '/privacy', label: 'Privacy policy' },
+    { path: '/terms', label: 'Terms and conditions' },
   ],
 };
 
@@ -74,7 +75,7 @@ export class LayoutView extends View {
             <h2 class="footer-heading">Kiin Kiin Bao Bao</h2>
             <ul role="list">
               ${each(NAV.footer, (l) => `<li><a href="#${l.path}">${esc(l.label)}</a></li>`)}
-              <li><a href="${info.links.controlReport}" target="_blank" rel="noopener">Food safety report</a></li>
+              <li><a href="${info.links.controlReport}" target="_blank" rel="noopener">Control report</a></li>
             </ul>
           </nav>
 
@@ -104,7 +105,6 @@ export class LayoutView extends View {
           <div class="dish-dialog-media"></div>
           <div class="dish-dialog-body">
             <h2 id="dish-dialog-title"></h2>
-            <p class="dish-dialog-price"></p>
             <p class="dish-dialog-desc"></p>
             <p class="dish-dialog-veg" hidden>${icon('leaf')} Vegan</p>
           </div>
@@ -152,7 +152,6 @@ export class LayoutView extends View {
     const d = this.dialog;
     d.querySelector('.dish-dialog-media').innerHTML = img(dish.image, dish.name, { eager: true });
     d.querySelector('#dish-dialog-title').textContent = dish.name;
-    d.querySelector('.dish-dialog-price').textContent = `${dish.price} kr`;
     d.querySelector('.dish-dialog-desc').textContent = dish.description;
     d.querySelector('.dish-dialog-veg').hidden = !dish.vegan;
     d.showModal();

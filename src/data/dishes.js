@@ -4,7 +4,6 @@ export const dishes = [
   {
     id: 'pork-bao',
     name: 'Classic braised pork bao',
-    price: 70,
     image: 'pork-bao',
     description:
       'Soft steamed bao with braised pork, goma mayo, crushed peanuts, spring onion, red onion, coriander and chili.',
@@ -14,7 +13,6 @@ export const dishes = [
   {
     id: 'beef-bao',
     name: 'Beef brisket bao',
-    price: 70,
     image: 'beef-bao',
     description:
       'Soft steamed bao with slow-cooked beef brisket, barbecue sauce, crushed peanuts, spring onion, grilled pineapple and coriander.',
@@ -23,7 +21,6 @@ export const dishes = [
   {
     id: 'portobello-bao',
     name: 'Portobello panko bao',
-    price: 70,
     image: 'portobello-bao',
     vegan: true,
     description:
@@ -33,7 +30,6 @@ export const dishes = [
   {
     id: 'gyoza',
     name: 'Homemade fried gyoza',
-    price: 75,
     image: 'gyoza',
     description:
       'Fried dumplings with chicken and kimchi filling, served with black vinegar and laoganma chili crisp.',
@@ -42,7 +38,6 @@ export const dishes = [
   {
     id: 'mango-salad',
     name: 'Thai mango salad',
-    price: 85,
     image: 'mango-salad',
     description:
       'Fresh mango with cucumber, carrot and lettuce in homemade yum dressing, basil mayo, crushed cashews, orange slices and watercress.',
@@ -52,7 +47,6 @@ export const dishes = [
   {
     id: 'chicken-bao',
     name: 'Fried chicken bao',
-    price: 70,
     image: 'chicken-bao',
     description: 'Soft steamed bao with fried chicken, chili mayo and a carrot and cabbage pickle.',
     featured: true,
@@ -60,7 +54,6 @@ export const dishes = [
   {
     id: 'red-curry',
     name: 'Kiin Kiin red curry',
-    price: 150,
     image: 'red-curry',
     description:
       'Red curry with Kiin Kiin Thai spices, coconut milk and fish sauce, sweetened with condensed milk.',
@@ -70,7 +63,6 @@ export const dishes = [
   {
     id: 'galbi-ribs',
     name: 'Korean galbi short ribs',
-    price: 180,
     image: 'galbi-ribs',
     description:
       'Korean-style short ribs, slow-cooked and grilled with a homemade savoury sauce, served with rice and homemade kimchi.',

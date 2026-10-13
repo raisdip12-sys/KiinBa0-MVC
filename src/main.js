@@ -12,6 +12,7 @@ import {
   FaqController,
   JobsController,
   PrivacyController,
+  TermsController,
   NotFoundController,
 } from './controllers/pages.js';
 
@@ -29,6 +30,7 @@ const routes = [
   { path: '/faq', Controller: FaqController },
   { path: '/jobs', Controller: JobsController },
   { path: '/privacy', Controller: PrivacyController },
+  { path: '/terms', Controller: TermsController },
 ];
 
 class App {

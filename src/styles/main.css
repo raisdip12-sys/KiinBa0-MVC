@@ -156,7 +156,7 @@ button {
   min-height: 48px;
   padding: 0.7em 1.5em 0.55em;
   border: 1px solid var(--brass);
-  border-radius: 999px;
+  border-radius: 4px;
   background: var(--brass);
   color: var(--lacquer);
   font-family: var(--display);
@@ -392,7 +392,7 @@ body.nav-open .site-header::before {
     gap: 0.45rem;
     background: none;
     border: 1px solid var(--line);
-    border-radius: 999px;
+    border-radius: 4px;
     font-family: var(--display);
     letter-spacing: 0.04em;
     cursor: pointer;
@@ -1141,14 +1141,14 @@ body.nav-open .site-header::before {
   display: inline-flex;
   padding: 4px;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 6px;
 }
 
 .lang-switch button {
   min-height: 40px;
   padding: 0.35rem 1rem 0.2rem;
   border: 0;
-  border-radius: 999px;
+  border-radius: 3px;
   background: none;
   font-family: var(--display);
   letter-spacing: 0.03em;
@@ -1380,7 +1380,7 @@ body.nav-open .site-header::before {
 .course-options.is-choice li {
   padding: 0.3rem 0.9rem 0.2rem;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 3px;
   font-size: 1rem;
 }
 
@@ -1681,7 +1681,7 @@ body.nav-open .site-header::before {
   min-height: 56px;
   background: var(--soy);
   border: 1px solid var(--line-soft);
-  border-radius: 999px;
+  border-radius: 6px;
   transition:
     border-color 0.2s,
     box-shadow 0.2s;

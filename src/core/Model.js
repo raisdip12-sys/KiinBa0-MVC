@@ -1,7 +1,7 @@
 /**
  * Base Model.
  * Holds data and a small piece of observable state. Views never touch
- * a model directly — controllers read from it and pass plain data to views.
+ * a model directly. Controllers read from it and pass plain data to views.
  */
 export class Model {
   constructor(initialState = {}) {

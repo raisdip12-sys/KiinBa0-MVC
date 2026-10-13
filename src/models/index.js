@@ -2,7 +2,7 @@ import { Model } from '../core/Model.js';
 import { restaurant } from '../data/restaurant.js';
 import { dishes } from '../data/dishes.js';
 import { alaCarte, setMenus, kidsMenu, drinksMenu } from '../data/menus.js';
-import { faqs, jobs, events, about, privacy } from '../data/pages.js';
+import { faqs, jobs, events, about, privacy, terms } from '../data/pages.js';
 
 const store = {
   read(key, fallback) {
@@ -129,10 +129,10 @@ export class ContactModel extends Model {
   }
 }
 
-/** Static page content: events, jobs, about, privacy. */
+/** Static page content: events, jobs, about, privacy, terms. */
 export class ContentModel extends Model {
   constructor() {
-    super({ jobs, events, about, privacy });
+    super({ jobs, events, about, privacy, terms });
   }
 }
 

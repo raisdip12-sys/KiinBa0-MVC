@@ -29,7 +29,7 @@ export class AlaCarteView extends View {
       <div class="menu-page" lang="${lang === 'dk' ? 'da' : 'en'}">
         ${pageHead({
           title: lang === 'dk' ? 'À la carte menukort' : 'À la carte menu',
-          lead: lang === 'dk' ? 'Priser i kr. Tryk på en ret med foto for at se den.' : 'Prices in kr. Tap a dish name with a photo to see it.',
+          lead: lang === 'dk' ? 'Tryk på en understreget ret for at se et foto.' : 'Tap an underlined dish to see a photo.',
           aside: toggle,
         })}
         <div class="menu-columns">${each(menu.sections, menuSection)}</div>

@@ -11,13 +11,13 @@ export const faqs = [
 
 export const jobs = {
   intro: [
-    'We are always looking for people who love hospitality, food and making a guest’s evening.',
-    'Whether you are an experienced chef, a service professional or just starting out in hospitality, we would love to hear from you.',
+    'We hire for both the kitchen and the dining room.',
+    'Experienced or new to restaurants, send us your CV and a few lines about yourself.',
   ],
   roles: [
-    { title: 'Service staff', text: 'Look after our guests on busy evenings and keep the room running smoothly.' },
-    { title: 'Kitchen staff', text: 'Work with our kitchen team to prepare baos and dishes to a high standard.' },
-    { title: 'Open application', text: 'Think you would be a great fit? Send us your CV and tell us about yourself.' },
+    { title: 'Service staff', text: 'Serve guests in the dining room and at the bar.' },
+    { title: 'Kitchen staff', text: 'Prepare baos, starters and mains with our kitchen team.' },
+    { title: 'Open application', text: 'Don’t see the right role? Send your CV and tell us what you’d like to do.' },
   ],
 };
 
@@ -42,17 +42,17 @@ export const about = {
     {
       title: 'Our space',
       image: 'space-3',
-      text: 'A warm, modern room on Vesterbrogade, relaxed enough for a quick bao and lively enough for a long evening with friends.',
+      text: 'Our dining room is at Vesterbrogade 96 in Vesterbro, open every evening from 17.00.',
     },
     {
       title: 'Our food',
       image: 'space-6',
-      text: 'The menu takes its cue from Asian street food: bold flavours and fresh ingredients, with every bao steamed fresh each day.',
+      text: 'Asian street food and tapas: steamed baos, gyoza, salads, Thai red curry and Korean short ribs. Our baos are made fresh every day.',
     },
     {
-      title: 'Our evenings',
+      title: 'Our bar',
       image: 'space-1',
-      text: 'Handmade cocktails, good music and a busy room. We want every visit to feel like a night out, not just a meal.',
+      text: 'Cocktails, spritz and mocktails, plus beer, wine, coffee and tea.',
     },
   ],
   owners: {
@@ -61,8 +61,7 @@ export const about = {
     paragraphs: [
       'Addy and Henrik are the driving force behind Kiin Kiin Bao Bao and the wider Kiin restaurant family, built on a shared passion for hospitality and culinary innovation.',
       'Under their leadership Kiin Kiin earned two Michelin stars and became one of the most celebrated restaurants in the Nordic food scene.',
-      'They have a gift for finding talent, bringing together outstanding chefs and service teams and giving them room to make each concept their own.',
-      'Across every restaurant the aim stays the same: evenings where creativity, quality and atmosphere meet.',
+      'They bring together chefs and service teams across the group and give each restaurant room to develop its own concept.',
     ],
   },
   brands: [
@@ -146,6 +145,59 @@ export const privacy = {
     {
       heading: 'Changes to this policy',
       paragraphs: ['We may update this policy from time to time. The latest version is always on this page.'],
+    },
+  ],
+};
+
+// Draft terms built from facts already on the site. Have the owner review before relying on them.
+export const terms = {
+  updated: 'October 2026',
+  sections: [
+    {
+      heading: 'About these terms',
+      paragraphs: [
+        'These terms apply when you use this website or visit Kiin Kiin Bao Bao, Vesterbrogade 96, 1620 København V.',
+      ],
+    },
+    {
+      heading: 'Reservations',
+      paragraphs: [
+        'Table bookings are handled by our booking partner EasyTable, and their booking terms apply as well.',
+        'If you can’t make it, please cancel or call us so we can offer the table to another guest.',
+      ],
+    },
+    {
+      heading: 'Takeaway and gift cards',
+      paragraphs: [
+        'Takeaway orders are placed at eat.kiinbao.dk and gift cards are sold at kiinkiingifts.dk. The terms shown on those sites apply to those purchases.',
+      ],
+    },
+    {
+      heading: 'Prices and menus',
+      paragraphs: [
+        'All prices are in Danish kroner and include VAT. Menus, dishes and prices can change without notice.',
+      ],
+    },
+    {
+      heading: 'Receipts',
+      paragraphs: ['Please keep your receipt. Reissuing a receipt after your visit costs 250 kr.'],
+    },
+    {
+      heading: 'Allergies',
+      paragraphs: [
+        'Tell our staff about any allergies before you order. Our kitchen uses common allergens such as peanuts, sesame, soy, shellfish and gluten, so we can’t guarantee that a dish is free of traces.',
+      ],
+    },
+    {
+      heading: 'Website content',
+      paragraphs: [
+        'Text, photos and logos on this website belong to Kiin Kiin Bao Bao. Please don’t reuse them without permission.',
+        'Links to other websites are provided for convenience. We are not responsible for their content.',
+      ],
+    },
+    {
+      heading: 'Governing law',
+      paragraphs: ['These terms are governed by Danish law.'],
     },
   ],
 };

@@ -57,16 +57,17 @@ Everything a restaurant changes often lives in `src/data/`:
 - `menus.js`: à la carte (English and Danish), 3-course, tasting, kids, drinks
 - `dishes.js`: dishes with photos (the hero steamer and "Most loved dishes")
 - `restaurant.js`: address, hours, phone, emails, booking and gift-card links
-- `pages.js`: FAQ, jobs, events, about, privacy policy
+- `pages.js`: FAQ, jobs, events, about, privacy policy, terms and conditions
 
 ## What changed from v1
 
 - One shared header and footer on every page, so no page is a dead end
 - Mobile menu (hamburger) with an animated panel
-- Rebuilt privacy page (it was an HTML fragment with no styling)
+- Rebuilt privacy page (it was an HTML fragment with no styling) and a new terms and conditions page
+- Square favicon and Apple touch icon
 - Hero: dishes rotate inside a bamboo steamer whose lid lifts on load, with steam rising
-- Dish popups open from the photo you clicked (View Transitions API)
-- Menus laid out like a printed card, with dotted price leaders
+- Dish popups with photo and description
+- Menus laid out like a printed card; food prices are not shown, drinks keep theirs
 - English/Danish menu choice is remembered
 - FAQ search with smooth expanding answers
 - Contact form validates and opens the visitor's email app with the message ready
