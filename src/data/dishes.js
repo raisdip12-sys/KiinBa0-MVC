@@ -6,7 +6,7 @@ export const dishes = [
     name: 'Classic braised pork bao',
     image: 'pork-bao',
     description:
-      'Soft steamed bao with braised pork, goma mayo, crushed peanuts, spring onion, red onion, coriander and chili.',
+      'Soft steamed bao with braised pork, goma mayo, pickles, onions, peanuts, chili and coriander.',
     featured: true,
     inSteamer: true,
   },
@@ -15,16 +15,15 @@ export const dishes = [
     name: 'Beef brisket bao',
     image: 'beef-bao',
     description:
-      'Soft steamed bao with slow-cooked beef brisket, barbecue sauce, crushed peanuts, spring onion, grilled pineapple and coriander.',
+      'Soft steamed bao with pulled beef brisket, Asian BBQ sauce, roasted pineapple, peanuts, spring onion and coriander.',
     inSteamer: true,
   },
   {
     id: 'portobello-bao',
     name: 'Portobello panko bao',
     image: 'portobello-bao',
-    vegan: true,
     description:
-      'Soft steamed bao with panko-fried portobello, truffle or basil mayo (vegan), radish pickle and fresh dill.',
+      'Soft steamed bao with panko-fried portobello, truffle mayo, white radish pickles and dill.',
     inSteamer: true,
   },
   {
@@ -40,7 +39,7 @@ export const dishes = [
     name: 'Thai mango salad',
     image: 'mango-salad',
     description:
-      'Fresh mango with cucumber, carrot and lettuce in homemade yum dressing, basil mayo, crushed cashews, orange slices and watercress.',
+      'Fresh mango salad with spicy vegan yum dressing, peanuts and basil mayo.',
     featured: true,
     inSteamer: true,
   },
@@ -48,7 +47,7 @@ export const dishes = [
     id: 'chicken-bao',
     name: 'Fried chicken bao',
     image: 'chicken-bao',
-    description: 'Soft steamed bao with fried chicken, chili mayo and a carrot and cabbage pickle.',
+    description: 'Soft steamed bao with fried chicken, chili mayo and freshly sliced onion.',
     featured: true,
   },
   {
@@ -56,7 +55,7 @@ export const dishes = [
     name: 'Kiin Kiin red curry',
     image: 'red-curry',
     description:
-      'Red curry with Kiin Kiin Thai spices, coconut milk and fish sauce, sweetened with condensed milk.',
+      'Kiin Kiin red curry with chicken breast and vegetables, served with jasmine rice. Can be made vegetarian with extra vegetables.',
     featured: true,
     inSteamer: true,
   },

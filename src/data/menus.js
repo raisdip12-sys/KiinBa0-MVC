@@ -6,15 +6,15 @@ export const alaCarte = {
     title: 'À la carte',
     sections: [
       {
-        heading: 'Starters',
+        heading: 'Small dishes',
         items: [
-          { no: 1, name: 'Crispy kale', detail: 'basil mayo and herb oil' },
-          { no: 2, name: 'Soto soup', detail: 'chicken, boiled egg and glass noodles', tags: 'L' },
+          { no: 1, name: 'Vegan poppadums', detail: 'mint chutney sauce', tags: 'L V' },
+          { no: 2, name: 'Soft shell crab salad', detail: 'pomelo and yum dressing', tags: 'L' },
           { no: 3, name: 'Oyster mushrooms', detail: 'chili mayo', tags: 'T' },
           { no: 4, name: 'Japanese spicy tuna', detail: 'sesame oil, kewpie chili mayo and papadum chips', tags: 'S' },
-          { no: 5, name: 'Fried buttermilk prawn', detail: 'yuzu mayo and grilled pineapple', tags: 'S' },
-          { no: 6, name: 'Thai mango salad', detail: 'spicy vegan yum dressing', dish: 'mango-salad' },
-          { no: 7, name: 'Charred broccolini', detail: 'miso ponzu and roasted cashews', tags: 'L V P' },
+          { no: 5, name: 'Fried buttermilk prawn', detail: 'yuzu mayo, grilled pineapple and togarashi', tags: 'S' },
+          { no: 6, name: 'Thai mango salad', detail: 'spicy vegan yum dressing, peanuts and basil mayo', tags: 'T V P L G', dish: 'mango-salad' },
+          { no: 7, name: 'Charred broccolini', detail: 'miso ponzu and roasted cashew nuts', tags: 'L V P' },
           { no: 8, name: 'Homemade fried gyoza', detail: 'chicken and kimchi filling, black vinegar and laoganma sauce', tags: 'S L', dish: 'gyoza' },
           { no: 9, name: 'Rare grilled beef', detail: 'soy butter, onion, spring onion, fried garlic and togarashi' },
         ],
@@ -22,29 +22,28 @@ export const alaCarte = {
       {
         heading: 'Baos',
         items: [
-          { no: 21, name: 'Braised pork bao', dish: 'pork-bao' },
-          { no: 22, name: 'Pulled beef brisket bao', dish: 'beef-bao' },
-          { no: 23, name: 'Fried chicken bao', dish: 'chicken-bao' },
-          { no: 24, name: 'Portobello panko bao', dish: 'portobello-bao' },
+          { no: 21, name: 'Braised pork bao', detail: 'goma mayo, pickles, onions, peanuts, chili and coriander', tags: 'P', dish: 'pork-bao' },
+          { no: 22, name: 'Pulled beef brisket bao', detail: 'Asian BBQ sauce, roasted pineapple, peanuts, spring onion and coriander', tags: 'P', dish: 'beef-bao' },
+          { no: 23, name: 'Fried chicken bao', detail: 'chili mayo and freshly sliced onion', dish: 'chicken-bao' },
+          { no: 24, name: 'Portobello panko bao', detail: 'truffle mayo, white radish pickles and dill', tags: 'T', dish: 'portobello-bao' },
           { no: 25, name: 'Crispy soft shell crab bao', detail: 'spicy teriyaki mayo, fried dill and togarashi' },
-          { no: 26, name: 'Japanese prawn tempura bao', detail: 'wasabi mayo and watercress', tags: 'S' },
+          { no: 26, name: 'Prawn tempura bao', detail: 'wasabi mayo and watercress', tags: 'S' },
           { no: 27, name: 'Chicken mozzarella bao', detail: 'tomato passata, truffle mayo and mozzarella cheese' },
         ],
       },
       {
         heading: 'Mains',
         items: [
-          { no: 31, name: 'Grilled salmon', detail: 'curry gravy, grilled broccolini and cherry tomato, tzatziki and jasmine rice' },
-          { no: 32, name: 'Stir-fry udon' },
-          { no: 33, name: 'Kiin Kiin red curry', dish: 'red-curry' },
+          { no: 31, name: 'Grilled salmon', detail: 'curry gravy, grilled broccolini and cherry tomato, tzatziki and jasmine rice', tags: 'G S' },
+          { no: 32, name: 'Stir-fry udon', detail: 'grilled beef, black pepper sauce and vegetables', tags: 'L' },
+          { no: 33, name: 'Kiin Kiin red curry', detail: 'chicken breast and vegetables, served with jasmine rice. Can be made vegetarian with extra vegetables', dish: 'red-curry' },
         ],
       },
       {
         heading: 'Desserts',
         items: [
-          { no: 41, name: 'Sweet bao', detail: 'filled with peanut cream, served with vanilla ice cream' },
-          { no: 42, name: 'Salted egg buns', detail: 'with icing sugar and cinnamon dust' },
-          { no: 43, name: 'Guava chili sorbet', detail: 'with pineapple and vegan cream' },
+          { no: 41, name: 'Salted egg buns', detail: 'icing sugar and cinnamon dust' },
+          { no: 42, name: 'Guava chili sorbet', detail: 'pineapple and vegan cream', tags: 'V' },
         ],
       },
       {
@@ -52,7 +51,7 @@ export const alaCarte = {
         items: [
           { name: 'Jasmine rice' },
           { name: 'Kimchi' },
-          { name: 'Cucumber salad' },
+          { name: 'Cucumber salad', tags: 'V L T G' },
           { name: 'Plain bao' },
         ],
       },
@@ -60,8 +59,8 @@ export const alaCarte = {
     note: {
       heading: 'Vegan options',
       lines: [
-        'We also serve vegan options and lactose-free bao for vegans and vegetarians.',
-        'Please ask our staff about vegan options and allergies.',
+        'Lactose-free and vegan baos are available on request.',
+        'Some dishes can be made vegetarian or vegan on request. Please ask our staff about allergies.',
       ],
     },
   },
@@ -71,12 +70,12 @@ export const alaCarte = {
       {
         heading: 'Små retter',
         items: [
-          { no: 1, name: 'Sprød grønkål', detail: 'basilikummayo og urteolie' },
-          { no: 2, name: 'Soto-suppe', detail: 'kylling, kogt æg og glasnudler', tags: 'L' },
+          { no: 1, name: 'Vegansk poppadums', detail: 'myntechutneysauce', tags: 'L V' },
+          { no: 2, name: 'Soft shell krabbesalat', detail: 'pomelo og yum dressing', tags: 'L' },
           { no: 3, name: 'Østerssvampe', detail: 'chilimayo', tags: 'T' },
           { no: 4, name: 'Japansk krydret tun', detail: 'sesamolie, kewpie chilimayo og papadumchips', tags: 'S' },
-          { no: 5, name: 'Friteret kærnemælksreje', detail: 'yuzumayo og grillet ananas', tags: 'S' },
-          { no: 6, name: 'Thai mangosalat', detail: 'krydret vegansk yum-dressing', dish: 'mango-salad' },
+          { no: 5, name: 'Friteret kærnemælksreje', detail: 'yuzumayo, grillet ananas og togarashi', tags: 'S' },
+          { no: 6, name: 'Thai mangosalat', detail: 'krydret vegansk yum dressing, peanuts og basilikummayo', tags: 'T V P L G', dish: 'mango-salad' },
           { no: 7, name: 'Grillet broccolini', detail: 'miso ponzu og ristede cashewnødder', tags: 'L V P' },
           { no: 8, name: 'Hjemmelavede stegte gyoza', detail: 'kylling- og kimchifyld, sort eddike og laoganma-sauce', tags: 'S L', dish: 'gyoza' },
           { no: 9, name: 'Rare-grillet oksekød', detail: 'soyasmør, løg, forårsløg, stegt hvidløg og togarashi' },
@@ -85,29 +84,28 @@ export const alaCarte = {
       {
         heading: 'Baos',
         items: [
-          { no: 21, name: 'Braiseret svinekød bao', dish: 'pork-bao' },
-          { no: 22, name: 'Pulled beef brisket bao', dish: 'beef-bao' },
-          { no: 23, name: 'Stegt kylling bao', dish: 'chicken-bao' },
-          { no: 24, name: 'Portobellosvampe bao', dish: 'portobello-bao' },
+          { no: 21, name: 'Braiseret svinekød bao', detail: 'goma mayo, pickles, løg, peanuts, chili og koriander', tags: 'P', dish: 'pork-bao' },
+          { no: 22, name: 'Pulled beef brisket bao', detail: 'asiatisk BBQ-sauce, ristet ananas, peanuts, forårsløg og koriander', tags: 'P', dish: 'beef-bao' },
+          { no: 23, name: 'Stegt kylling bao', detail: 'chilimayo og frisk rødløg', dish: 'chicken-bao' },
+          { no: 24, name: 'Portobellosvampe bao', detail: 'trøffelmayo, syltede radiser og dild', tags: 'T', dish: 'portobello-bao' },
           { no: 25, name: 'Crispy softshell krabbe bao', detail: 'spicy teriyakimayo, stegt dild og togarashi' },
           { no: 26, name: 'Tempurarejer bao', detail: 'wasabimayo og brøndkarse', tags: 'S' },
-          { no: 27, name: 'Kylling-mozzarella bao', detail: 'tomatpassata, trøffelmayo og mozzarella' },
+          { no: 27, name: 'Kylling-mozzarella bao', detail: 'tomatpassata, trøffelmayo og mozzarellaost' },
         ],
       },
       {
         heading: 'Hovedretter',
         items: [
-          { no: 31, name: 'Grillet laks', detail: 'karrysauce, grillet broccolini og cherrytomat, tzatziki og jasminris' },
-          { no: 32, name: 'Stir-fry udonnudler' },
-          { no: 33, name: 'Kiin Kiin rød karry', dish: 'red-curry' },
+          { no: 31, name: 'Grillet laks', detail: 'karrysovs, grillet broccolini og cherrytomat, tzatziki og jasminris', tags: 'G S' },
+          { no: 32, name: 'Stir-fry udonnudler', detail: 'grillet oksekød, sort peber-sovs og grøntsager', tags: 'L' },
+          { no: 33, name: 'Kiin Kiin rød karry', detail: 'kyllingebryst og grøntsager, serveres med ris. Kan laves vegetarisk med ekstra grøntsager', dish: 'red-curry' },
         ],
       },
       {
-        heading: 'Dessert',
+        heading: 'Sødt',
         items: [
-          { no: 41, name: 'Sød bao', detail: 'fyldt med peanutcreme, serveret med vaniljeis' },
-          { no: 42, name: 'Salted egg-boller', detail: 'med flormelis og kanel' },
-          { no: 43, name: 'Guava-chili-sorbet', detail: 'med ananas og vegansk creme' },
+          { no: 41, name: 'Saltede æggeboller', detail: 'flormelis og kanel' },
+          { no: 42, name: 'Guava chili sorbet', detail: 'ananas og vegansk creme', tags: 'V' },
         ],
       },
       {
@@ -115,7 +113,7 @@ export const alaCarte = {
         items: [
           { name: 'Jasminris' },
           { name: 'Kimchi' },
-          { name: 'Agurkesalat' },
+          { name: 'Agurkesalat', tags: 'V L T G' },
           { name: 'Almindelig bao' },
         ],
       },
@@ -123,8 +121,8 @@ export const alaCarte = {
     note: {
       heading: 'Veganske muligheder',
       lines: [
-        'Vi serverer også veganske retter og laktosefri bao til veganere og vegetarer.',
-        'Spørg venligst vores personale om veganske muligheder og allergier.',
+        'Laktosefri og veganske baos kan fås på bestilling.',
+        'Nogle retter kan laves vegetariske eller veganske. Spørg venligst vores personale om allergier.',
       ],
     },
   },
