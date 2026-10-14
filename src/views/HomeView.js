@@ -128,13 +128,17 @@ export class HomeView extends View {
       this.$('.steamer-count').textContent = `${index + 1} of ${count}`;
     };
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) return swap();
+    // Rapid clicks: cancel the pending swap so animations never pile up.
+    clearTimeout(this.swapTimer);
+    btn.classList.remove('is-entering');
     btn.classList.add('is-leaving');
-    setTimeout(() => {
+    this.swapTimer = setTimeout(() => {
       swap();
       btn.classList.remove('is-leaving');
+      void btn.offsetWidth; // restart the enter animation cleanly
       btn.classList.add('is-entering');
       btn.addEventListener('animationend', () => btn.classList.remove('is-entering'), { once: true });
-    }, 280);
+    }, 150);
   }
 
   readForm() {

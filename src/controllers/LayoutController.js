@@ -63,7 +63,7 @@ export class LayoutController {
     v.dialog.addEventListener('click', (e) => e.target === v.dialog && v.closeDish());
     v.dialog.addEventListener('cancel', (e) => {
       e.preventDefault();
-      v.closeDish();
+      v.closeDish({ instant: true });
     });
 
     const onScroll = () => v.setElevated(window.scrollY > 8);

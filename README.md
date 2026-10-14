@@ -76,6 +76,7 @@ Everything a restaurant changes often lives in `src/data/`:
 - Keyboard focus styles, skip link, and full support for reduced-motion settings
 - Allergen key on the menus; set menus show the vegetarian track and availability
 - Fonts served from the site itself, so no visitor data goes to Google Fonts
+- Motion follows Emil Kowalski's design engineering principles: strong ease-out curves, UI animations under 300ms, press feedback on every button, hover effects only on real mice, no animation on keyboard actions, and gentle fades instead of movement for reduced-motion users
 
 ## Author
 

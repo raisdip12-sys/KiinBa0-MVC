@@ -157,8 +157,14 @@ export class LayoutView extends View {
     d.showModal();
   }
 
-  closeDish() {
+  /** Close the dish dialog. Keyboard closes are instant: keyboard actions should never animate. */
+  closeDish({ instant = false } = {}) {
     if (!this.dialog.open) return;
+    if (instant) {
+      this.dialog.classList.remove('is-closing');
+      this.dialog.close();
+      return;
+    }
     this.dialog.classList.add('is-closing');
     const done = () => {
       this.dialog.classList.remove('is-closing');

@@ -54,8 +54,11 @@
   --gutter: clamp(1rem, 4vw, 3.5rem);
   --max: 1240px;
   --radius: 14px;
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  /* Motion: strong custom curves (Emil Kowalski's values). UI motion stays under 300ms. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --press: 160ms;
   --header-h: 84px;
 
   color-scheme: dark;
@@ -191,9 +194,9 @@ button {
   text-decoration: none;
   cursor: pointer;
   transition:
-    background-color 0.25s,
-    color 0.25s,
-    transform 0.25s var(--ease-out);
+    background-color 200ms ease,
+    color 200ms ease,
+    transform var(--press) var(--ease-out);
 }
 
 .btn:hover {
@@ -267,7 +270,7 @@ button {
   background: rgba(26, 19, 16, 0.96);
   box-shadow: 0 1px 0 var(--line);
   opacity: 0;
-  transition: opacity 0.35s;
+  transition: opacity 200ms ease-out;
 }
 
 .site-header[data-elevated='true']::before,
@@ -323,7 +326,7 @@ body.nav-open .site-header::before {
   background: var(--brass);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.35s var(--ease-out);
+  transition: transform 200ms var(--ease-out);
 }
 
 .nav-link:hover::after,
@@ -341,7 +344,7 @@ body.nav-open .site-header::before {
 }
 
 .nav-group-btn .icon {
-  transition: transform 0.3s var(--ease-out);
+  transition: transform 200ms var(--ease-out);
 }
 
 .nav-group.is-open .nav-group-btn .icon {
@@ -362,17 +365,19 @@ body.nav-open .site-header::before {
   box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.6);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-6px);
+  transform: translateY(-4px) scale(0.97);
+  transform-origin: top left;
   transition:
-    opacity 0.22s,
-    transform 0.3s var(--ease-out),
-    visibility 0.3s;
+    opacity 120ms ease-out,
+    transform 120ms var(--ease-out),
+    visibility 120ms;
 }
 
 .nav-group.is-open .nav-dropdown {
   opacity: 1;
   visibility: visible;
   transform: none;
+  transition-duration: 200ms;
 }
 
 .nav-sublink {
@@ -451,9 +456,9 @@ body.nav-open .site-header::before {
     transform: translateY(-12px);
     visibility: hidden;
     transition:
-      opacity 0.3s,
-      transform 0.4s var(--ease-out),
-      visibility 0.4s;
+      opacity 250ms ease-out,
+      transform 300ms var(--ease-drawer),
+      visibility 300ms;
   }
 
   body.nav-open {
@@ -470,8 +475,8 @@ body.nav-open .site-header::before {
     opacity: 0;
     transform: translateY(10px);
     transition:
-      opacity 0.3s,
-      transform 0.4s var(--ease-out);
+      opacity 250ms ease-out,
+      transform 300ms var(--ease-drawer);
   }
 
   body.nav-open .site-nav > * {
@@ -479,11 +484,11 @@ body.nav-open .site-header::before {
     transform: none;
   }
 
-  body.nav-open .site-nav > :nth-child(2) { transition-delay: 0.05s; }
-  body.nav-open .site-nav > :nth-child(3) { transition-delay: 0.1s; }
-  body.nav-open .site-nav > :nth-child(4) { transition-delay: 0.15s; }
-  body.nav-open .site-nav > :nth-child(5) { transition-delay: 0.2s; }
-  body.nav-open .site-nav > :nth-child(6) { transition-delay: 0.25s; }
+  body.nav-open .site-nav > :nth-child(2) { transition-delay: 40ms; }
+  body.nav-open .site-nav > :nth-child(3) { transition-delay: 80ms; }
+  body.nav-open .site-nav > :nth-child(4) { transition-delay: 120ms; }
+  body.nav-open .site-nav > :nth-child(5) { transition-delay: 160ms; }
+  body.nav-open .site-nav > :nth-child(6) { transition-delay: 200ms; }
 
   .nav-link {
     font-size: 1.6rem;
@@ -515,7 +520,6 @@ body.nav-open .site-header::before {
     display: grid;
     grid-template-rows: 0fr;
     overflow: hidden;
-    transition: grid-template-rows 0.35s var(--ease-out);
   }
 
   .nav-dropdown > li {
@@ -762,19 +766,29 @@ body.nav-open .site-header::before {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s var(--ease-out);
+  transition: transform 300ms var(--ease-out);
 }
 
-.steamer-dish:hover img {
-  transform: scale(1.05);
+@media (hover: hover) and (pointer: fine) {
+  .steamer-dish:hover img {
+    transform: scale(1.04);
+  }
+}
+
+.steamer-dish {
+  transition: transform var(--press) var(--ease-out);
+}
+
+.steamer-dish:active {
+  transform: scale(0.98);
 }
 
 .steamer-dish.is-leaving {
-  animation: dish-out 0.28s var(--ease-in-out) forwards;
+  animation: dish-out 150ms var(--ease-out) forwards;
 }
 
 .steamer-dish.is-entering {
-  animation: dish-in 0.6s var(--ease-out);
+  animation: dish-in 300ms var(--ease-out);
 }
 
 /* Woven lid that lifts off once on page load */
@@ -855,8 +869,8 @@ body.nav-open .site-header::before {
   background: rgba(26, 19, 16, 0.6);
   cursor: pointer;
   transition:
-    border-color 0.2s,
-    transform 0.2s var(--ease-out);
+    border-color 200ms ease,
+    transform var(--press) var(--ease-out);
 }
 
 .steamer-nav:hover {
@@ -864,30 +878,30 @@ body.nav-open .site-header::before {
 }
 
 .steamer-nav:active {
-  transform: scale(0.92);
+  transform: scale(0.95);
 }
 
 /* Orchestrated load: headline lines rise, then the lid lifts. */
 .hero-line {
-  animation: line-up 1s var(--ease-out) both;
+  animation: line-up 800ms var(--ease-out) both;
 }
 
 .hero-line:nth-child(2) {
-  animation-delay: 0.12s;
+  animation-delay: 80ms;
 }
 
 .hero-place,
 .hero-lead,
 .hero-actions {
-  animation: fade-up 0.9s 0.35s var(--ease-out) both;
+  animation: fade-up 600ms 250ms var(--ease-out) both;
 }
 
 .hero-actions {
-  animation-delay: 0.5s;
+  animation-delay: 350ms;
 }
 
 .steamer-caption {
-  animation: fade-up 0.8s 1.5s var(--ease-out) both;
+  animation: fade-up 500ms 1.4s var(--ease-out) both;
 }
 
 @media (max-width: 899px) {
@@ -959,14 +973,22 @@ body.nav-open .site-header::before {
     0 0 0 8px var(--soy),
     0 0 0 9px var(--line),
     0 24px 40px -18px rgba(0, 0, 0, 0.8);
-  transition: box-shadow 0.4s var(--ease-out);
+  transition: box-shadow 200ms ease;
 }
 
 .plate-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s var(--ease-out);
+  transition: transform 300ms var(--ease-out);
+}
+
+.plate-btn {
+  transition: transform var(--press) var(--ease-out);
+}
+
+.plate-btn:active {
+  transform: scale(0.97);
 }
 
 .plate-btn:hover .plate-photo,
@@ -978,8 +1000,10 @@ body.nav-open .site-header::before {
     0 28px 44px -16px rgba(0, 0, 0, 0.85);
 }
 
-.plate-btn:hover .plate-photo img {
-  transform: scale(1.06) rotate(-3deg);
+@media (hover: hover) and (pointer: fine) {
+  .plate-btn:hover .plate-photo img {
+    transform: scale(1.04) rotate(-2deg);
+  }
 }
 
 .plate-name {
@@ -1179,8 +1203,13 @@ body.nav-open .site-header::before {
   letter-spacing: 0.03em;
   cursor: pointer;
   transition:
-    background-color 0.25s,
-    color 0.25s;
+    background-color 200ms ease,
+    color 200ms ease,
+    transform var(--press) var(--ease-out);
+}
+
+.lang-switch button:active {
+  transform: scale(0.97);
 }
 
 .lang-switch button[aria-pressed='true'] {
@@ -1328,7 +1357,7 @@ body.nav-open .site-header::before {
 /* Menu sections unfold one after another when a menu page opens. */
 .menu-section,
 .course {
-  animation: fade-up 0.7s calc(var(--i, 0) * 70ms + 0.1s) var(--ease-out) both;
+  animation: fade-up 400ms calc(var(--i, 0) * 50ms) var(--ease-out) both;
 }
 
 /* Set menus: courses are a real sequence, so they're numbered. */
@@ -1514,9 +1543,14 @@ body.nav-open .site-header::before {
   cursor: zoom-in;
   rotate: 8deg;
   transition:
-    rotate 0.45s var(--ease-out),
-    translate 0.45s var(--ease-out);
-  animation: promo-drop 0.9s 0.6s var(--ease-out) both;
+    rotate 250ms var(--ease-out),
+    translate 250ms var(--ease-out),
+    scale var(--press) var(--ease-out);
+  animation: promo-drop 600ms 400ms var(--ease-out) both;
+}
+
+.promo-card:active {
+  scale: 0.97;
 }
 
 .promo-card img {
@@ -1524,7 +1558,13 @@ body.nav-open .site-header::before {
   box-shadow: 0 24px 40px -12px rgba(0, 0, 0, 0.8);
 }
 
-.promo-card:hover,
+@media (hover: hover) and (pointer: fine) {
+  .promo-card:hover {
+    rotate: 0deg;
+    translate: 0 -8px;
+  }
+}
+
 .promo-card:focus-visible {
   rotate: 0deg;
   translate: 0 -8px;
@@ -1539,7 +1579,7 @@ body.nav-open .site-header::before {
   text-align: center;
   color: var(--brass-bright);
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 200ms ease;
 }
 
 .promo-card:hover .promo-label,
@@ -1631,7 +1671,7 @@ body.nav-open .site-header::before {
 .events-photo {
   border-radius: var(--radius);
   overflow: hidden;
-  animation: fade-up 0.8s calc(var(--i) * 120ms + 0.2s) var(--ease-out) both;
+  animation: fade-up 450ms calc(var(--i) * 60ms + 100ms) var(--ease-out) both;
 }
 
 .events-photo:first-child {
@@ -1826,7 +1866,7 @@ body.nav-open .site-header::before {
 
 .faq-item {
   border-bottom: 1px solid var(--line-soft);
-  animation: fade-up 0.4s var(--ease-out) both;
+  animation: fade-up 300ms var(--ease-out) both;
 }
 
 .faq-item summary {
@@ -1848,7 +1888,7 @@ body.nav-open .site-header::before {
 
 .faq-item summary .icon {
   color: var(--brass);
-  transition: transform 0.35s var(--ease-out);
+  transition: transform 200ms var(--ease-out);
 }
 
 .faq-item[open] summary .icon {
@@ -1867,7 +1907,7 @@ body.nav-open .site-header::before {
 }
 
 .faq-item[open] p {
-  animation: fade-up 0.35s var(--ease-out);
+  animation: fade-up 250ms var(--ease-out);
 }
 
 .faq-empty {
@@ -2014,8 +2054,9 @@ body.nav-open .site-header::before {
   border-radius: 50%;
   border: 1px solid var(--line);
   transition:
-    border-color 0.2s,
-    background-color 0.2s;
+    border-color 200ms ease,
+    background-color 200ms ease,
+    transform var(--press) var(--ease-out);
 }
 
 .socials a:hover {
@@ -2064,11 +2105,11 @@ body.nav-open .site-header::before {
 }
 
 .dish-dialog[open] {
-  animation: dialog-in 0.45s var(--ease-out);
+  animation: dialog-in 250ms var(--ease-out);
 }
 
 .dish-dialog.is-closing {
-  animation: dialog-out 0.22s var(--ease-in-out) forwards;
+  animation: dialog-out 150ms var(--ease-out) forwards;
 }
 
 .dish-dialog::backdrop,
@@ -2078,11 +2119,11 @@ body.nav-open .site-header::before {
 
 .dish-dialog[open]::backdrop,
 .promo-dialog[open]::backdrop {
-  animation: fade 0.35s;
+  animation: fade 200ms ease-out;
 }
 
 .promo-dialog[open] {
-  animation: dialog-in 0.45s var(--ease-out);
+  animation: dialog-in 250ms var(--ease-out);
 }
 
 .dish-dialog-inner {
@@ -2143,6 +2184,18 @@ body.nav-open .site-header::before {
   border: 1px solid var(--line);
   background: rgba(26, 19, 16, 0.8);
   cursor: pointer;
+}
+
+.dish-dialog-close {
+  transition:
+    border-color 200ms ease,
+    transform var(--press) var(--ease-out);
+}
+
+.dish-dialog-close:active,
+.nav-toggle:active,
+.socials a:active {
+  transform: scale(0.95);
 }
 
 .dish-dialog-close:hover {
@@ -2227,28 +2280,30 @@ body.nav-open .site-header::before {
 @keyframes dish-out {
   to {
     opacity: 0;
-    transform: rotate(-24deg) scale(0.9);
+    transform: rotate(-10deg) scale(0.95);
+    filter: blur(2px);
   }
 }
 
 @keyframes dish-in {
   from {
     opacity: 0;
-    transform: rotate(24deg) scale(0.9);
+    transform: rotate(10deg) scale(0.95);
+    filter: blur(2px);
   }
 }
 
 @keyframes dialog-in {
   from {
     opacity: 0;
-    transform: translateY(16px) scale(0.97);
+    transform: scale(0.96);
   }
 }
 
 @keyframes dialog-out {
   to {
     opacity: 0;
-    transform: translateY(10px) scale(0.98);
+    transform: scale(0.97);
   }
 }
 
@@ -2289,15 +2344,58 @@ body.nav-open .site-header::before {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
     animation-delay: 0ms !important;
-    transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  /* Entrances become a short fade with no movement. */
+  .hero-line,
+  .hero-place,
+  .hero-lead,
+  .hero-actions,
+  .steamer-caption,
+  .menu-section,
+  .course,
+  .events-photo,
+  .faq-item,
+  .faq-item[open] p,
+  .dish-dialog[open],
+  .promo-dialog[open],
+  .promo-card,
+  .hero-backdrop img {
+    animation: fade 200ms ease-out both !important;
+  }
+
+  .dish-dialog.is-closing {
+    animation: fade-out 120ms ease-out forwards !important;
+  }
+
+  /* Keep colour and opacity changes; drop transform-based motion. */
+  .btn:active,
+  .plate-btn:active,
+  .steamer-nav:active,
+  .steamer-dish:active,
+  .lang-switch button:active,
+  .dish-dialog-close:active,
+  .nav-toggle:active,
+  .socials a:active {
+    transform: none;
+  }
+
+  .site-nav,
+  .site-nav > *,
+  .nav-dropdown {
+    transform: none !important;
   }
 
   .steamer-lid,
   .steam {
     display: none;
   }
+}
 
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
 }
