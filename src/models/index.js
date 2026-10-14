@@ -1,7 +1,7 @@
 import { Model } from '../core/Model.js';
 import { restaurant } from '../data/restaurant.js';
 import { dishes } from '../data/dishes.js';
-import { alaCarte, setMenus, kidsMenu, drinksMenu } from '../data/menus.js';
+import { alaCarte, setMenus, kidsMenu, drinksMenu, allergenKey } from '../data/menus.js';
 import { faqs, jobs, events, about, privacy, terms } from '../data/pages.js';
 
 const store = {
@@ -68,6 +68,11 @@ export class MenuModel extends Model {
 
   get alaCarte() {
     return alaCarte[this.state.lang];
+  }
+
+  /** Allergen key in the given language (defaults to the chosen one). */
+  allergenKey(lang = this.state.lang) {
+    return allergenKey[lang];
   }
 
   setLang(lang) {

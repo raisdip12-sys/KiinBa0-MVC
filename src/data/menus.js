@@ -14,7 +14,7 @@ export const alaCarte = {
           { no: 4, name: 'Japanese spicy tuna', detail: 'sesame oil, kewpie chili mayo and papadum chips', tags: 'S' },
           { no: 5, name: 'Fried buttermilk prawn', detail: 'yuzu mayo and grilled pineapple', tags: 'S' },
           { no: 6, name: 'Thai mango salad', detail: 'spicy vegan yum dressing', dish: 'mango-salad' },
-          { no: 7, name: 'Charred broccolini', detail: 'miso ponzu and roasted cashews', tags: 'L V N' },
+          { no: 7, name: 'Charred broccolini', detail: 'miso ponzu and roasted cashews', tags: 'L V P' },
           { no: 8, name: 'Homemade fried gyoza', detail: 'chicken and kimchi filling, black vinegar and laoganma sauce', tags: 'S L', dish: 'gyoza' },
           { no: 9, name: 'Rare grilled beef', detail: 'soy butter, onion, spring onion, fried garlic and togarashi' },
         ],
@@ -77,7 +77,7 @@ export const alaCarte = {
           { no: 4, name: 'Japansk krydret tun', detail: 'sesamolie, kewpie chilimayo og papadumchips', tags: 'S' },
           { no: 5, name: 'Friteret kærnemælksreje', detail: 'yuzumayo og grillet ananas', tags: 'S' },
           { no: 6, name: 'Thai mangosalat', detail: 'krydret vegansk yum-dressing', dish: 'mango-salad' },
-          { no: 7, name: 'Grillet broccolini', detail: 'miso ponzu og ristede cashewnødder', tags: 'L V N' },
+          { no: 7, name: 'Grillet broccolini', detail: 'miso ponzu og ristede cashewnødder', tags: 'L V P' },
           { no: 8, name: 'Hjemmelavede stegte gyoza', detail: 'kylling- og kimchifyld, sort eddike og laoganma-sauce', tags: 'S L', dish: 'gyoza' },
           { no: 9, name: 'Rare-grillet oksekød', detail: 'soyasmør, løg, forårsløg, stegt hvidløg og togarashi' },
         ],
@@ -130,6 +130,32 @@ export const alaCarte = {
   },
 };
 
+// Allergen and diet codes, as used on the restaurant's printed menu.
+export const allergenKey = {
+  en: {
+    heading: 'Allergen key',
+    codes: [
+      ['V', 'vegan'],
+      ['T', 'vegetarian'],
+      ['L', 'lactose free'],
+      ['G', 'gluten free'],
+      ['S', 'seafood'],
+      ['P', 'nuts'],
+    ],
+  },
+  dk: {
+    heading: 'Allergenoversigt',
+    codes: [
+      ['V', 'vegansk'],
+      ['T', 'vegetarisk'],
+      ['L', 'laktosefri'],
+      ['G', 'glutenfri'],
+      ['S', 'skaldyr og fisk'],
+      ['P', 'nødder'],
+    ],
+  },
+};
+
 const baoChoices = [
   'Braised pork',
   'Fried chicken',
@@ -141,25 +167,50 @@ const baoChoices = [
 ];
 
 // Set menus are served in order, so their courses are a real sequence.
+// Each menu has a chef's choice track and a vegetarian track.
+const sorbet = 'Guava chili sorbet with pineapple and vegan cream';
+
 export const setMenus = {
   'three-course': {
     title: '3-course menu',
     price: 350,
     priceNote: 'per person',
-    intro: ['One drink each and a jug of water included.'],
-    courses: [
-      { heading: 'First serving', choose: 'one', options: ['Homemade gyoza dumplings', 'Thai mango salad'] },
-      { heading: 'Second serving', choose: 'one bao per person', options: baoChoices },
-      { heading: 'Third serving', options: ['Kiin Kiin red curry with jasmine rice'] },
+    intro: ['Includes a jug of water and one drink each: a glass of wine, a beer or a soft drink.'],
+    availability: 'Not available on Fridays and Saturdays.',
+    tracks: [
       {
-        heading: 'Sweet ending',
-        options: ['Homemade guava ice cream with caramelised pineapple, topped with whipped cream'],
-        extra: '+60 kr',
+        name: 'Chef’s choice',
+        courses: [
+          {
+            heading: 'First serving',
+            choose: 'one',
+            options: [
+              'Homemade fried gyoza with chicken and kimchi filling',
+              'Thai mango salad with vegan yum dressing, cashews and basil mayo',
+            ],
+          },
+          { heading: 'Second serving', choose: 'one bao per person', options: baoChoices },
+          { heading: 'Third serving', options: ['Kiin Kiin red curry with chicken breast and vegetables, served with jasmine rice'] },
+          { heading: 'Sweet ending', extra: 'optional, +60 kr', options: [sorbet] },
+        ],
+      },
+      {
+        name: 'Vegetarian and vegan',
+        courses: [
+          {
+            heading: 'First serving',
+            choose: 'one',
+            options: ['Oyster mushrooms with chili mayo', 'Charred broccolini with miso ponzu and roasted cashews'],
+          },
+          { heading: 'Second serving', options: ['Portobello panko bao with truffle mayo, white radish pickles and dill'] },
+          { heading: 'Third serving', options: ['Kiin Kiin red curry with vegetables, served with jasmine rice'] },
+          { heading: 'Sweet ending', extra: 'optional, +60 kr', options: [sorbet] },
+        ],
       },
     ],
     note: {
-      heading: 'Vegan options',
-      lines: ['We also serve vegan options and lactose-free bao.', 'Please ask our staff about vegan options and allergies.'],
+      heading: 'Allergies',
+      lines: ['Please tell our staff about any allergies when you order.'],
     },
   },
   tasting: {
@@ -167,38 +218,54 @@ export const setMenus = {
     price: 550,
     priceNote: 'per person',
     intro: [
-      'A little bit of everything, made to ease your cravings.',
-      'Two drinks per person (minimum 2 people): a glass of wine, beer or soft drinks.',
+      'A little bit of everything. Minimum 2 people.',
+      'Includes a jug of water and two drinks per person: wine, beer or soft drinks.',
     ],
-    courses: [
+    tracks: [
       {
-        heading: 'First serving',
-        options: [
-          'Thai mango salad with spicy vegan yum dressing, cashews and basil mayo',
-          'Homemade fried gyoza with chicken and kimchi, black vinegar and laoganma sauce',
-          'Japanese spicy tuna with kewpie chili mayo, sesame oil and papadum chips',
-          'Crispy kale with basil mayo and herb oil',
+        name: 'Chef’s choice',
+        courses: [
+          {
+            heading: 'First serving',
+            all: true,
+            options: [
+              'Thai mango salad with vegan yum dressing, cashews and basil mayo',
+              'Homemade fried gyoza with chicken and kimchi',
+              'Japanese spicy tuna with chili mayo and papadum chips',
+              'Crispy oyster mushrooms with teriyaki mayo',
+            ],
+          },
+          { heading: 'Second serving', choose: 'one bao per person', options: baoChoices },
+          {
+            heading: 'Third serving',
+            all: true,
+            options: ['Grilled salmon with curry gravy, grilled broccolini and cherry tomato, tzatziki and jasmine rice'],
+          },
+          { heading: 'Dessert', options: [sorbet] },
         ],
-        all: true,
       },
-      { heading: 'Second serving', choose: 'one bao per person', options: baoChoices },
       {
-        heading: 'Third serving',
-        choose: 'one',
-        options: [
-          'Grilled salmon with curry gravy, grilled broccolini and cherry tomato, tzatziki and jasmine rice',
-          'Vegetarian red curry (for vegetarians only)',
-          'Stir-fry udon with teriyaki sauce, black pepper and vegetables (for vegans only)',
+        name: 'Vegetarian',
+        courses: [
+          {
+            heading: 'First serving',
+            all: true,
+            options: [
+              'Thai mango salad with vegan yum dressing, cashews and basil mayo',
+              'Charred broccolini with miso ponzu and roasted cashews',
+              'Papadum chips with mint chutney',
+              'Crispy oyster mushrooms with chili mayo',
+            ],
+          },
+          { heading: 'Second serving', options: ['Portobello panko bao with truffle mayo, white radish pickles and dill'] },
+          { heading: 'Third serving', all: true, options: ['Vegetarian red curry with mixed vegetables and tofu'] },
+          { heading: 'Dessert', options: [sorbet] },
         ],
-      },
-      {
-        heading: 'Dessert',
-        options: ['Homemade guava ice cream with caramelised pineapple, topped with whipped cream'],
       },
     ],
     note: {
-      heading: 'Vegan options',
-      lines: ['The tasting menu can be served vegan.', 'Please ask our staff about vegan options and allergies.'],
+      heading: 'Allergies',
+      lines: ['Please tell our staff about any allergies when you order.'],
     },
   },
 };

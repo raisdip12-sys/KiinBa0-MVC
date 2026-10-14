@@ -62,6 +62,15 @@ export const menuSection = (section, i = 0) => `
     <ul class="menu-lines" role="list">${each(section.items, menuLine)}</ul>
   </section>`;
 
+/** Explains the allergen letters shown next to dishes. */
+export const allergenLegend = (key) =>
+  key
+    ? `<aside class="allergen-key" aria-label="${esc(key.heading)}">
+        <h2>${esc(key.heading)}</h2>
+        <dl>${each(key.codes, ([code, label]) => `<div><dt>${esc(code)}</dt><dd>${esc(label)}</dd></div>`)}</dl>
+      </aside>`
+    : '';
+
 export const noteCard = (note) =>
   note
     ? `<aside class="note-card">

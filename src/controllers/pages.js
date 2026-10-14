@@ -78,7 +78,7 @@ export class AlaCarteController extends Controller {
 
   data() {
     const { menus } = this.models;
-    return { menu: menus.alaCarte, lang: menus.get('lang') };
+    return { menu: menus.alaCarte, lang: menus.get('lang'), key: menus.allergenKey() };
   }
 
   mount() {
@@ -108,7 +108,7 @@ export class KidsController extends Controller {
   }
 
   mount() {
-    new ListMenuView(this.root).render({ menu: this.models.menus.kids, path: '/kids' });
+    new ListMenuView(this.root).render({ menu: this.models.menus.kids, path: '/kids', key: this.models.menus.allergenKey('en') });
   }
 }
 

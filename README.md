@@ -38,6 +38,7 @@ src/
     pages.js               one controller per page
   styles/main.css          design tokens, layout, animations
 images/                    photos, compressed to WebP (35 MB → 2.6 MB)
+fonts/                     Josefin Sans and Newsreader, served locally (SIL Open Font License)
 docs/                      event brochure PDF
 ```
 
@@ -54,7 +55,7 @@ calls `view.swapLanguage()` (model → view).
 
 Everything a restaurant changes often lives in `src/data/`:
 
-- `menus.js`: à la carte (English and Danish), 3-course, tasting, kids, drinks
+- `menus.js`: à la carte (English and Danish), 3-course and tasting (chef's choice and vegetarian tracks), kids, drinks, allergen key
 - `dishes.js`: dishes with photos (the hero steamer and "Most loved dishes")
 - `restaurant.js`: address, hours, phone, emails, booking and gift-card links
 - `pages.js`: FAQ, jobs, events, about, privacy policy, terms and conditions
@@ -73,6 +74,8 @@ Everything a restaurant changes often lives in `src/data/`:
 - Contact form validates and opens the visitor's email app with the message ready
 - Images compressed from 35 MB to 2.6 MB; meta description and alt text added
 - Keyboard focus styles, skip link, and full support for reduced-motion settings
+- Allergen key on the menus; set menus show the vegetarian track and availability
+- Fonts served from the site itself, so no visitor data goes to Google Fonts
 
 ## Author
 

@@ -1,5 +1,5 @@
 import { View, esc, each } from '../core/View.js';
-import { img, pageHead, menuSection, noteCard } from './components/partials.js';
+import { img, pageHead, menuSection, noteCard, allergenLegend } from './components/partials.js';
 
 /** Other menus, shown at the foot of each menu page. */
 const otherMenus = (current) => {
@@ -19,7 +19,7 @@ const otherMenus = (current) => {
 
 /** À la carte, with an English / Danish switch. */
 export class AlaCarteView extends View {
-  template({ menu, lang }) {
+  template({ menu, lang, key }) {
     const toggle = `
       <div class="lang-switch" role="group" aria-label="Menu language">
         <button type="button" data-lang="en" aria-pressed="${lang === 'en'}">English</button>
@@ -33,6 +33,7 @@ export class AlaCarteView extends View {
           aside: toggle,
         })}
         <div class="menu-columns">${each(menu.sections, menuSection)}</div>
+        ${allergenLegend(key)}
         ${noteCard(menu.note)}
         ${otherMenus('/menu')}
       </div>`;
@@ -46,35 +47,50 @@ export class AlaCarteView extends View {
   }
 }
 
-/** 3-course and tasting menus: served in order, so courses are numbered. */
+/** One numbered course list. Courses are served in order, so numbers carry meaning. */
+const courseList = (courses) => `
+  <ol class="courses" role="list">
+    ${each(
+      courses,
+      (c, i) => `
+      <li class="course" style="--i:${i}">
+        <span class="course-no" aria-hidden="true">${i + 1}</span>
+        <div class="course-body">
+          <h3 class="course-heading">${esc(c.heading)}
+            ${c.choose ? `<span class="course-choose">choose ${esc(c.choose)}</span>` : ''}
+            ${c.all ? `<span class="course-choose">served to share</span>` : ''}
+            ${c.extra ? `<span class="course-choose">${esc(c.extra)}</span>` : ''}
+          </h3>
+          <ul class="course-options${c.choose ? ' is-choice' : ''}" role="list">
+            ${each(c.options, (o) => `<li>${esc(o)}</li>`)}
+          </ul>
+        </div>
+      </li>`
+    )}
+  </ol>`;
+
+/** 3-course and tasting menus: a chef's choice track beside a vegetarian track. */
 export class SetMenuView extends View {
   template({ menu, path }) {
     return `
       <div class="menu-page set-menu">
         ${pageHead({
           title: menu.title,
-          lead: each(menu.intro, (l) => `${esc(l)} `),
+          lead:
+            each(menu.intro, (l) => `${esc(l)} `) +
+            (menu.availability ? `<strong class="availability">${esc(menu.availability)}</strong>` : ''),
           aside: `<p class="set-price"><span class="set-price-num">${menu.price}</span> kr ${esc(menu.priceNote)}</p>`,
         })}
-        <ol class="courses" role="list">
+        <div class="tracks">
           ${each(
-            menu.courses,
-            (c, i) => `
-            <li class="course" style="--i:${i}">
-              <span class="course-no" aria-hidden="true">${i + 1}</span>
-              <div class="course-body">
-                <h2 class="course-heading">${esc(c.heading)}
-                  ${c.choose ? `<span class="course-choose">choose ${esc(c.choose)}</span>` : ''}
-                  ${c.all ? `<span class="course-choose">all served to share</span>` : ''}
-                  ${c.extra ? `<span class="course-choose">${esc(c.extra)}</span>` : ''}
-                </h2>
-                <ul class="course-options${c.choose ? ' is-choice' : ''}" role="list">
-                  ${each(c.options, (o) => `<li>${esc(o)}</li>`)}
-                </ul>
-              </div>
-            </li>`
+            menu.tracks,
+            (t) => `
+            <section class="track" aria-label="${esc(t.name)}">
+              <h2 class="track-name">${esc(t.name)}</h2>
+              ${courseList(t.courses)}
+            </section>`
           )}
-        </ol>
+        </div>
         ${noteCard(menu.note)}
         ${otherMenus(path)}
       </div>`;
@@ -83,11 +99,12 @@ export class SetMenuView extends View {
 
 /** Kids menu and drinks share the printed-list layout. */
 export class ListMenuView extends View {
-  template({ menu, path, lead = '', promo = false }) {
+  template({ menu, path, lead = '', promo = false, key = null }) {
     return `
       <div class="menu-page${promo ? ' has-promo' : ''}">
         ${pageHead({ title: menu.title, lead })}
         <div class="menu-columns">${each(menu.sections, menuSection)}</div>
+        ${allergenLegend(key)}
         ${noteCard(menu.note)}
         ${
           promo
