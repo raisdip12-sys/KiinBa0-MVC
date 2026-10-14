@@ -84,8 +84,8 @@ export const privacy = {
     {
       heading: 'Who we are',
       paragraphs: [
-        'Kiin Kiin Bao Bao (“we”, “us”) collects and processes personal data to provide our services, including reservations, customer communication and dining.',
-        'We are the data controller for your personal data, which means we decide how and why it is processed. Some trusted third parties, such as booking platforms and payment providers, help us run the restaurant; they must handle your data securely and lawfully.',
+        'Kiin Kiin Bao Bao is run by Kiin ApS (CVR 29603170). Kiin ApS (“we”, “us”) collects and processes personal data to provide our services, including reservations, customer communication and dining.',
+        'Kiin ApS is the data controller for your personal data, which means we decide how and why it is processed. Some trusted third parties, such as booking platforms and payment providers, help us run the restaurant; they must handle your data securely and lawfully.',
       ],
     },
     {
@@ -156,7 +156,7 @@ export const terms = {
     {
       heading: 'About these terms',
       paragraphs: [
-        'These terms apply when you use this website or visit Kiin Kiin Bao Bao, Vesterbrogade 96, 1620 København V.',
+        'These terms apply when you use this website or visit Kiin Kiin Bao Bao, Vesterbrogade 96, 1620 København V. The restaurant is run by Kiin ApS (CVR 29603170).',
       ],
     },
     {
@@ -191,7 +191,7 @@ export const terms = {
     {
       heading: 'Website content',
       paragraphs: [
-        'Text, photos and logos on this website belong to Kiin Kiin Bao Bao. Please don’t reuse them without permission.',
+        'Text, photos and logos on this website belong to Kiin ApS. Please don’t reuse them without permission.',
         'Links to other websites are provided for convenience. We are not responsible for their content.',
       ],
     },

@@ -148,6 +148,7 @@ export class LegalView extends View {
           <section>
             <h2>Contact</h2>
             <p>Questions about this page or your data? Write to <a href="mailto:${info.email}">${esc(info.email)}</a>, call <a href="${info.phoneHref}">${esc(info.phone)}</a>, or visit us at ${esc(info.address.street)}, ${esc(info.address.postcode)} ${esc(info.address.city)}.</p>
+            <p>${esc(info.company.name)}, CVR ${esc(info.company.cvr)}</p>
           </section>
         </div>
       </div>`;

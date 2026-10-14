@@ -1,5 +1,6 @@
 export const restaurant = {
   name: 'Kiin Kiin Bao Bao',
+  company: { name: 'Kiin ApS', cvr: '29603170' },
   established: 2018,
   tagline: 'Modern Asian tapas in Copenhagen',
   address: { street: 'Vesterbrogade 96', city: 'København V', postcode: '1620' },

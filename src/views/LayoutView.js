@@ -97,7 +97,7 @@ export class LayoutView extends View {
             ${img('badge', 'Byens Bedste award', { ext: 'png', cls: 'footer-badge' })}
           </div>
         </div>
-        <p class="footer-small">© ${new Date().getFullYear()} Kiin Kiin Bao Bao · Vesterbrogade 96, Copenhagen</p>
+        <p class="footer-small">© ${new Date().getFullYear()} ${esc(info.company.name)} · CVR ${esc(info.company.cvr)} · ${esc(info.address.street)}, ${esc(info.address.postcode)} ${esc(info.address.city)}</p>
       </footer>
 
       <dialog class="dish-dialog" aria-labelledby="dish-dialog-title">
